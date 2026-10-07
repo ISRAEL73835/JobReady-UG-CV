@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>JobReady UG</title>
+                <link rel="stylesheet" href="style.css">
+                </head>
+
+                <body>
+
+                    <header>
+                            <h1>JobReady UG</h1>
+                                    <p>Your smart CV & Job Application Assistant</p>
+                                        </header>
+
+                                            <main>
+                                                    <section>
+                                                                <h2>Create Your CV</h2>
+                                                                            <p>Build a professional CV using your phone.</p>
+
+                                                                                        <button onclick="startCV()">Create CV</button>
+                                                                                                    <button onclick="startApplication()">Create Job Application</button>
+                                                                                                            </section>
+
+                                                                                                                    <section>
+                                                                                                                                <h2>AI Guidance</h2>
+                                                                                                                                            <p>Get help preparing your CV and job application.</p>
+                                                                                                                                                        <button onclick="openAI()">Ask JobReady AI</button>
+                                                                                                                                                                </section>
+                                                                                                                                                                    </main>
+
+                                                                                                                                                                        <footer>
+                                                                                                                                                                                <p>© 2026 JobReady UG</p>
+                                                                                                                                                                                    </footer>
+
+                                                                                                                                                                                        <script src="script.js"></script>
+                                                                                                                                                                                        </body>
+                                                                                                                                                                                        </html>

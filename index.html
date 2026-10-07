@@ -1,39 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>JobReady UG</title>
-                <link rel="stylesheet" href="style.css">
-                </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobReady UG - CV & Application Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">JobReady <span>UG</span></div>
+  <select id="language" aria-label="Language">
+    <option value="en">English</option>
+    <option value="lg">Luganda</option>
+    <option value="sw">Kiswahili</option>
+  </select>
+  <a class="admin-link" href="admin.html">Admin</a>
+</header>
 
-                <body>
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">CV • Applications • Career guidance</p>
+      <h1>Build a professional CV from your phone.</h1>
+      <p>Enter your information once, preview your document, and prepare a professional CV or job application.</p>
+      <a class="btn primary" href="#builder">Start building</a>
+    </div>
+    <div class="hero-card">
+      <strong>JobReady UG</strong>
+      <span>Simple • Fast • Mobile friendly</span>
+      <b>UGX 2,500</b>
+      <small>Suggested price per generated document</small>
+    </div>
+  </section>
 
-                    <header>
-                            <h1>JobReady UG</h1>
-                                    <p>Your smart CV & Job Application Assistant</p>
-                                        </header>
+  <section id="builder" class="builder">
+    <div class="panel form-panel">
+      <h2>Your details</h2>
+      <p class="muted">Fill this in once. Your details stay in this browser until you clear them.</p>
 
-                                            <main>
-                                                    <section>
-                                                                <h2>Create Your CV</h2>
-                                                                            <p>Build a professional CV using your phone.</p>
+      <label>Document type</label>
+      <div class="segmented">
+        <button type="button" class="active" data-type="cv">CV</button>
+        <button type="button" data-type="application">Job Application</button>
+      </div>
 
-                                                                                        <button onclick="startCV()">Create CV</button>
-                                                                                                    <button onclick="startApplication()">Create Job Application</button>
-                                                                                                            </section>
+      <div class="grid">
+        <label>Full name<input id="name" placeholder="e.g. Brian Okello"></label>
+        <label>Phone<input id="phone" placeholder="+256 ..."></label>
+        <label>Email<input id="email" type="email" placeholder="you@example.com"></label>
+        <label>Location<input id="location" placeholder="Kampala, Uganda"></label>
+        <label>Job title / Target role<input id="role" placeholder="e.g. Sales Assistant"></label>
+        <label>Education<input id="education" placeholder="School, course and year"></label>
+      </div>
 
-                                                                                                                    <section>
-                                                                                                                                <h2>AI Guidance</h2>
-                                                                                                                                            <p>Get help preparing your CV and job application.</p>
-                                                                                                                                                        <button onclick="openAI()">Ask JobReady AI</button>
-                                                                                                                                                                </section>
-                                                                                                                                                                    </main>
+      <label>Professional summary / career objective
+        <textarea id="summary" rows="4" placeholder="Briefly describe your skills, experience and career goal."></textarea>
+      </label>
 
-                                                                                                                                                                        <footer>
-                                                                                                                                                                                <p>© 2026 JobReady UG</p>
-                                                                                                                                                                                    </footer>
+      <label>Work experience
+        <textarea id="experience" rows="5" placeholder="Company - Role - Dates&#10;Main responsibilities and achievements"></textarea>
+      </label>
 
-                                                                                                                                                                                        <script src="script.js"></script>
-                                                                                                                                                                                        </body>
-                                                                                                                                                                                        </html>
+      <label>Skills
+        <textarea id="skills" rows="3" placeholder="Communication, computer skills, teamwork..."></textarea>
+      </label>
+
+      <label>References
+        <textarea id="references" rows="3" placeholder="Name, position, organisation, phone/email"></textarea>
+      </label>
+
+      <div class="actions">
+        <button class="btn primary" id="previewBtn">Update preview</button>
+        <button class="btn" id="saveBtn">Save details</button>
+        <button class="btn" id="clearBtn">Clear</button>
+      </div>
+    </div>
+
+    <div class="panel preview-panel">
+      <div class="preview-head">
+        <h2>Preview</h2>
+        <button class="btn small" id="printBtn">Print / Save PDF</button>
+      </div>
+      <article id="documentPreview" class="document">
+        <h1>Your Name</h1>
+        <p class="contact">Phone • Email • Location</p>
+        <hr>
+        <h2>Professional Summary</h2>
+        <p>Complete the form to generate your document.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="chat panel">
+    <h2>JobReady Career Guide</h2>
+    <p class="muted">Ask for simple CV and job-application guidance.</p>
+    <div id="chatMessages" class="chat-messages">
+      <div class="bot">Hello! Ask me things like “How do I write my summary?” or “What should I put in skills?”</div>
+    </div>
+    <div class="chat-row">
+      <input id="chatInput" placeholder="Type your question...">
+      <button class="btn primary" id="chatBtn">Send</button>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 JobReady UG • Built for mobile users</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JobReady UG Admin</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">JobReady <span>UG</span> Admin</div><a href="index.html">Back to site</a></header>
+<main style="max-width:700px;margin:50px auto;padding:20px">
+<section class="panel" id="login">
+<h2>Admin login</h2>
+<p class="muted">For security, the real production password should be stored on a server, not inside public website code.</p>
+<label>Email<input id="adminEmail" type="email" placeholder="Admin email"></label>
+<label>Password<input id="adminPassword" type="password" placeholder="Admin password"></label>
+<button class="btn primary" id="loginBtn">Unlock dashboard</button>
+<p id="loginMsg"></p>
+</section>
+<section class="panel" id="dashboard" style="display:none">
+<h2>JobReady UG Dashboard</h2>
+<p>You are signed in to the demo dashboard.</p>
+<div class="hero-card">
+<strong>Documents generated on this device</strong>
+<b id="count">0</b>
+<small>This demo stores data locally. A production version should use a secure database and server authentication.</small>
+</div>
+<button class="btn" id="logout" style="margin-top:15px">Log out</button>
+</section>
+</main>
+<script>
+const ADMIN_EMAIL = "REPLACE_WITH_YOUR_ADMIN_EMAIL";
+const ADMIN_PASSWORD = "REPLACE_WITH_YOUR_ADMIN_PASSWORD";
+const $=id=>document.getElementById(id);
+$("loginBtn").onclick=()=>{
+ const email=$("adminEmail").value.trim(), pass=$("adminPassword").value;
+ if(email===ADMIN_EMAIL && pass===ADMIN_PASSWORD){
+   $("login").style.display="none";$("dashboard").style.display="block";
+ }else $("loginMsg").textContent="Login details are not correct.";
+};
+$("logout").onclick=()=>location.reload();
+</script>
+</body>
+</html>
